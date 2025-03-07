@@ -46,7 +46,7 @@ class GoalPoseFilterNode(Node):
         if self.current_floor == self.requested_floor:  
             self.publisher.publish(msg)
         else:
-            # If it doesn't match, publish the goal pose for floor 0
+            # If it doesn't match, publish the goal pose for nearest elevator
             self.get_logger().info('Publishing goal pose for this floor elevator')
             self.publish_goal_pose_for_floor(self.current_floor)
 
