@@ -14,15 +14,15 @@ class GoalPoseFilterNode(Node):
 
         #  subscription for the current floor
 
-        self.floor_subscription = self.create_subscription(
-            Int32,  # current_floor is of type Int32
+        self.current_floor_subscription = self.create_subscription(
+            Int32,  
             '/current_floor',
             self.current_floor_callback,
             10
         )
 
-        self.floor_subscription = self.create_subscription(
-            Int32,  # current_floor is of type Int32
+        self.requested_floor_subscription = self.create_subscription(
+            Int32,  
             '/requested_floor',
             self.requested_floor_callback,
             10
@@ -51,7 +51,7 @@ class GoalPoseFilterNode(Node):
             self.publish_goal_pose_for_floor(self.current_floor)
 
     def requested_floor_callback(self, msg):
-        # Update the current floor when a message is received on /current_floor topic
+        # Update the requested floor when a message is received on /requested_floor topic
         self.requested_floor = msg.data
         self.get_logger().info(f'Requested floor updated to: {self.requested_floor}')
 
