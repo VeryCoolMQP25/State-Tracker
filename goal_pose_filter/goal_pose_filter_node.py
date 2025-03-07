@@ -43,7 +43,7 @@ class GoalPoseFilterNode(Node):
         self.get_logger().info('Received filtered goal pose: %s' % str(msg))
 
         # If the current floor matches the floor of the goal pose, publish it to /goal_pose
-        if self.current_floor == self.requested_floor:  # Assuming floor info is in frame_id or any other field
+        if self.current_floor == self.requested_floor:  
             self.publisher.publish(msg)
         else:
             # If it doesn't match, publish the goal pose for floor 0
