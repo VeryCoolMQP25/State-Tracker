@@ -1,0 +1,3 @@
+[console_scripts]
+goal_pose_filter = goal_pose_filter.goal_pose_filter_node:main
+

@@ -1,0 +1,28 @@
+running egg_info
+creating build/goal_pose_filter/goal_pose_filter.egg-info
+writing manifest file 'build/goal_pose_filter/goal_pose_filter.egg-info/SOURCES.txt'
+writing manifest file 'build/goal_pose_filter/goal_pose_filter.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build
+creating /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib
+creating /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter
+copying goal_pose_filter/goal_pose_filter_node.py -> /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter
+copying goal_pose_filter/__init__.py -> /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter
+running install
+running install_lib
+creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter
+copying /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter/goal_pose_filter_node.py -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter
+copying /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter/__init__.py -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter
+byte-compiling /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter/goal_pose_filter_node.py to goal_pose_filter_node.cpython-310.pyc
+byte-compiling /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index
+creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index/resource_index
+creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index/resource_index/packages
+copying resource/goal_pose_filter -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index/resource_index/packages
+copying package.xml -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/goal_pose_filter
+running install_egg_info
+Copying build/goal_pose_filter/goal_pose_filter.egg-info to /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/install.log'

@@ -7,14 +7,24 @@ class GoalPoseFilterNode(Node):
     def __init__(self):
         super().__init__('goal_pose_filter_node')
 
-        # Default current floor to 1
+        # Default current & requested floor to 1
+
+        self.requested_floor = 1
         self.current_floor = 1
 
         #  subscription for the current floor
+
         self.floor_subscription = self.create_subscription(
             Int32,  # current_floor is of type Int32
             '/current_floor',
             self.current_floor_callback,
+            10
+        )
+
+        self.floor_subscription = self.create_subscription(
+            Int32,  # current_floor is of type Int32
+            '/requested_floor',
+            self.requested_floor_callback,
             10
         )
 
@@ -33,32 +43,57 @@ class GoalPoseFilterNode(Node):
         self.get_logger().info('Received filtered goal pose: %s' % str(msg))
 
         # If the current floor matches the floor of the goal pose, publish it to /goal_pose
-        if self.current_floor == msg.header.frame_id:  # Assuming floor info is in frame_id or any other field
+        if self.current_floor == self.requested_floor:  # Assuming floor info is in frame_id or any other field
             self.publisher.publish(msg)
         else:
             # If it doesn't match, publish the goal pose for floor 0
-            self.get_logger().info('Publishing goal pose for floor 0')
-            self.publish_goal_pose_for_floor_0()
+            self.get_logger().info('Publishing goal pose for this floor elevator')
+            self.publish_goal_pose_for_floor(self.requested_floor)
+
+    def requested_floor_callback(self, msg):
+        # Update the current floor when a message is received on /current_floor topic
+        self.requested_floor = msg.data
+        self.get_logger().info(f'Requested floor updated to: {self.requested_floor}')
 
     def current_floor_callback(self, msg):
         # Update the current floor when a message is received on /current_floor topic
         self.current_floor = msg.data
         self.get_logger().info(f'Current floor updated to: {self.current_floor}')
 
-    def publish_goal_pose_for_floor_0(self):
-        goal_pose_floor_0 = PoseStamped()
-        goal_pose_floor_0.header.stamp = self.get_clock().now().to_msg()
-        goal_pose_floor_0.header.frame_id = 'map'
-        goal_pose_floor_0.pose.position.x = 0.0
-        goal_pose_floor_0.pose.position.y = 0.0
-        goal_pose_floor_0.pose.position.z = 0.0
-        goal_pose_floor_0.pose.orientation.x = 0.0
-        goal_pose_floor_0.pose.orientation.y = 0.0
-        goal_pose_floor_0.pose.orientation.z = 0.0
-        goal_pose_floor_0.pose.orientation.w = 1.0
 
-        self.publisher.publish(goal_pose_floor_0)
-        self.get_logger().info('Published goal pose for floor 0')
+
+    def publish_goal_pose_for_floor(self, floor):
+        """Publish the goal pose for current floor elevator."""
+        
+        floor_coordinates = {
+            1: {'x': 1.0, 'y': 1.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            2: {'x': 2.0, 'y': 2.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            3: {'x': 3.0, 'y': 3.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            4: {'x': 4.0, 'y': 4.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            5: {'x': 5.0, 'y': 5.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+        }
+
+        # Ensure the requested floor is valid (between 1 and 5)
+        if floor in floor_coordinates:
+            coordinates = floor_coordinates[floor]
+            
+            # Prepare the goal pose message
+            goal_message = PoseStamped()
+            goal_message.header.stamp = self.get_clock().now().to_msg()
+            goal_message.header.frame_id = "map"
+            goal_message.pose.position.x = coordinates['x']
+            goal_message.pose.position.y = coordinates['y']
+            goal_message.pose.position.z = coordinates['z']
+            goal_message.pose.orientation.x = 0.0
+            goal_message.pose.orientation.y = 0.0
+            goal_message.pose.orientation.z = coordinates['orientationZ']
+            goal_message.pose.orientation.w = coordinates['orientationW']
+            
+            # Publish the goal pose message
+            self.publisher.publish(goal_message)
+            self.get_logger().info(f'Published goal pose for floor {floor} elevator: {coordinates}')
+        else:
+            self.get_logger().warning(f"Invalid floor: {floor}. No coordinates found.")
 
 def main(args=None):
     rclpy.init(args=args)

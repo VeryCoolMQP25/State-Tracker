@@ -1,0 +1,30 @@
+[0.467s] Invoking command in '/home/suki/ros2_ws/src/goal_pose_filter': PYTHONPATH=/home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/goal_pose_filter build --build-base /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build install --record /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/install.log --single-version-externally-managed install_data
+[0.637s] running egg_info
+[0.637s] creating build/goal_pose_filter/goal_pose_filter.egg-info
+[0.638s] writing manifest file 'build/goal_pose_filter/goal_pose_filter.egg-info/SOURCES.txt'
+[0.639s] writing manifest file 'build/goal_pose_filter/goal_pose_filter.egg-info/SOURCES.txt'
+[0.639s] running build
+[0.639s] running build_py
+[0.639s] creating /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build
+[0.639s] creating /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib
+[0.639s] creating /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter
+[0.639s] copying goal_pose_filter/goal_pose_filter_node.py -> /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter
+[0.641s] copying goal_pose_filter/__init__.py -> /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter
+[0.641s] running install
+[0.642s] running install_lib
+[0.642s] creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter
+[0.642s] copying /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter/goal_pose_filter_node.py -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter
+[0.643s] copying /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build/lib/goal_pose_filter/__init__.py -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter
+[0.643s] byte-compiling /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter/goal_pose_filter_node.py to goal_pose_filter_node.cpython-310.pyc
+[0.643s] byte-compiling /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter/__init__.py to __init__.cpython-310.pyc
+[0.643s] running install_data
+[0.643s] creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index
+[0.643s] creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index/resource_index
+[0.643s] creating /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index/resource_index/packages
+[0.643s] copying resource/goal_pose_filter -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/ament_index/resource_index/packages
+[0.643s] copying package.xml -> /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/share/goal_pose_filter
+[0.643s] running install_egg_info
+[0.644s] Copying build/goal_pose_filter/goal_pose_filter.egg-info to /home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages/goal_pose_filter-0.0.0-py3.10.egg-info
+[0.645s] running install_scripts
+[0.657s] writing list of installed files to '/home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/install.log'
+[0.671s] Invoked command in '/home/suki/ros2_ws/src/goal_pose_filter' returned '0': PYTHONPATH=/home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/suki/ros2_ws/src/goal_pose_filter/install/goal_pose_filter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/goal_pose_filter build --build-base /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/build install --record /home/suki/ros2_ws/src/goal_pose_filter/build/goal_pose_filter/install.log --single-version-externally-managed install_data
