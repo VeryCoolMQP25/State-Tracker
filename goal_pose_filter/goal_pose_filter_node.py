@@ -48,7 +48,7 @@ class GoalPoseFilterNode(Node):
         else:
             # If it doesn't match, publish the goal pose for floor 0
             self.get_logger().info('Publishing goal pose for this floor elevator')
-            self.publish_goal_pose_for_floor(self.requested_floor)
+            self.publish_goal_pose_for_floor(self.current_floor)
 
     def requested_floor_callback(self, msg):
         # Update the current floor when a message is received on /current_floor topic
