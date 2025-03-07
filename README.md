@@ -6,3 +6,5 @@ Once the user makes a request for a specific floor, it will publish thee request
 
 The current and requested floors are compared. If they match, the robot publishes the user's goal pose to /goal_pose and leads the user to their destination.
 If the floors do not match, the robot drives to the elevator on the current floor in preparation to enter the elevator.
+
+Already part of tori_bringup
