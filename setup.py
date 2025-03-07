@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'goal_pose_filter = goal_pose_filter.goal_pose_filter_node:main',  # Add this line
         ],
     },
 )
