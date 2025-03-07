@@ -66,11 +66,11 @@ class GoalPoseFilterNode(Node):
         """Publish the goal pose for current floor elevator."""
         
         floor_coordinates = {
-            1: {'x': 1.0, 'y': 1.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
-            2: {'x': 2.0, 'y': 2.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
-            3: {'x': 3.0, 'y': 3.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
-            4: {'x': 4.0, 'y': 4.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
-            5: {'x': 5.0, 'y': 5.0, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            1: {'x': 5.2, 'y': 3.61, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            2: {'x': 5.0, 'y': 26.7, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            3: {'x': 17.9, 'y': 10.5, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            4: {'x': 18.9, 'y': .243, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
+            5: {'x': 35.4, 'y': -1.9, 'z': 0.0, 'orientationZ': 0.0, 'orientationW': 1.0},
         }
 
         # Ensure the requested floor is valid (between 1 and 5)
